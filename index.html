@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>數字比大小</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app" aria-labelledby="game-title">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">數學小遊戲</p>
+          <h1 id="game-title">數字比大小</h1>
+          <p class="intro">看左邊和右邊的數字，選出正確的比較結果。</p>
+        </div>
+        <div class="scoreboard" aria-label="遊戲分數">
+          <div>
+            <span>分數</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>連勝</span>
+            <strong id="streak">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-panel" aria-live="polite">
+        <div class="level-row">
+          <label for="level">難度</label>
+          <select id="level">
+            <option value="20">1 到 20</option>
+            <option value="100" selected>1 到 100</option>
+            <option value="1000">1 到 1000</option>
+          </select>
+        </div>
+
+        <div class="numbers" aria-label="題目數字">
+          <div class="number-card">
+            <span>左邊</span>
+            <strong id="left-number">0</strong>
+          </div>
+          <div class="compare-mark" id="compare-mark">?</div>
+          <div class="number-card">
+            <span>右邊</span>
+            <strong id="right-number">0</strong>
+          </div>
+        </div>
+
+        <div class="choices" aria-label="選擇答案">
+          <button type="button" data-choice=">">左邊比較大</button>
+          <button type="button" data-choice="=">一樣大</button>
+          <button type="button" data-choice="<">右邊比較大</button>
+        </div>
+
+        <p class="message" id="message">請選出正確答案。</p>
+
+        <div class="actions">
+          <button type="button" id="next-btn">下一題</button>
+          <button type="button" id="reset-btn">重新開始</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
